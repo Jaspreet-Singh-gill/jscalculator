@@ -32,6 +32,8 @@ function operate(num1,num2 ,op){
     if(num1 == null){
         return "";
     }
+    num1 =Number(num1);
+    num2 = Number(num2);
     let result;
     switch(op){
         case "+":
@@ -50,6 +52,8 @@ function operate(num1,num2 ,op){
             return "";
 
     }
+    num1 = null;
+    num2 = null;
     return result;
 }
 
@@ -64,24 +68,29 @@ function inputFill(button_press){
         clear(inputArea);
         num1 = null;
         num2 = null;
+        operation = "";
     }
     else if(val =="del"){
         inputArea.value = inputArea.value.slice(0,inputArea.value.length -1);
     }
     else if((val == "+") || (val == "/")||(val == "-")||(val == "X")){
-        num2 = Number(inputArea.value);
         clear(inputArea);
         operation = val;
-        
-
-
-    
     }
-    else if((val == "=")){
-        inputArea.value = operate(num1,num2,operation);
-
+    else if(val == "="){
+        result = operate(num1,num2,operation);
+        num1 = result;
+        num2 = null;
+        operation ="";
+        inputArea.value = result;
     }
-    num1 = num2;
+
+    if(operation == "")
+        num1 = inputArea.value;
+    else
+        num2 = inputArea.value;
+
+
 
     
 }
