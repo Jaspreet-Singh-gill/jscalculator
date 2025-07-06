@@ -48,6 +48,9 @@ function operate(num1,num2 ,op){
         case "/":
             result = divide(num1,num2);
             break;
+        case "%":
+            result = (divide(num1,num2))*100;
+            break;
         default:
             return "";
 
@@ -64,6 +67,14 @@ function inputFill(button_press){
     if(val>= "0" && val <= "9"){
         inputArea.value += val;
     }
+    else if(val =="."){
+        
+        if(!(inputArea.value.split("").includes("."))){
+            inputArea.value += val;
+
+        }
+
+    }
     else if(val == "AC"){
         clear(inputArea);
         num1 = null;
@@ -73,17 +84,18 @@ function inputFill(button_press){
     else if(val =="del"){
         inputArea.value = inputArea.value.slice(0,inputArea.value.length -1);
     }
-    else if((val == "+") || (val == "/")||(val == "-")||(val == "X")){
+    else if((val == "+") || (val == "/")||(val == "-")||(val == "X")||(val == "%")){
         clear(inputArea);
         operation = val;
     }
     else if(val == "="){
+        if(operation != ""){
         result = operate(num1,num2,operation);
-        num1 = result;
         num2 = null;
         operation ="";
         inputArea.value = result;
-    }
+    }}
+
 
     if(operation == "")
         num1 = inputArea.value;
