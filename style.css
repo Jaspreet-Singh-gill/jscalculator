@@ -1,0 +1,96 @@
+body{
+    margin:0px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(0, 153, 248);
+
+}
+
+.h1,.h2,
+.h3{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    padding : 10px 20px;
+}
+.h2{
+    font-size: 45px;
+    
+    
+
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(199, 199, 255);
+}
+
+.calContainer{
+    display: flex;
+    width: 300px;
+    height: 430px;
+    margin: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:10px solid #000000;
+    border-radius: 30px;
+    background-color: rgb(71, 71, 71);
+
+
+
+}
+
+.calContainer button{
+    display: block;
+    width: 63.25px;
+    height: 50px;
+    margin:5px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#inputArea{
+    box-sizing: border-box;
+    width: 285px;
+    height: 60px;
+    margin:5px;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 34px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    text-align: right;
+    border: 5px solid black;
+    
+}
+
+#zero{
+    width: 137.5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(0, 153, 248);
+
+}
+
+.footer div{
+    font-size: 26px;
+    color: white;
+    padding: 20px 10px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
