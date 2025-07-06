@@ -57,6 +57,9 @@ function operate(num1,num2 ,op){
     }
     num1 = null;
     num2 = null;
+    if(!Number.isInteger(result)){
+       return result.toFixed(3);
+    }
     return result;
 }
 
